@@ -77,4 +77,29 @@ describe("Gilded Rose", function () {
     expect(items[0].quality).toBeGreaterThan(quality);
   });
 
+
+  it("should \"Sulfuras\" never has to be sold", function () {
+
+    const name = "Sulfuras, Hand of Ragnaros";
+    const sellIn = 10;
+    const quality = 8;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].sellIn).toBe(sellIn);
+  });
+
+  it("should \"Sulfuras\" never decreases in Quality", function () {
+
+    const name = "Sulfuras, Hand of Ragnaros";
+    const sellIn = 10;
+    const quality = 8;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].quality).toBe(quality);
+  });
+
 });
