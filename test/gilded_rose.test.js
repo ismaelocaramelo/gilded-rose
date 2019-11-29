@@ -12,40 +12,44 @@ describe("Gilded Rose", function () {
     const items = gildedRose.updateQuality();
   
     expect(items[0].name).toBe(name);
-    expect(items[0].sellIn).toBe(sellIn-1);
-    expect(items[0].quality).toBe(quality);
   });
 
-  it("should work with quality > 0", function () {
+  it("should decrease the sellIn by one", function () {
 
     const name = "foo";
     const sellIn = 0;
-    const quality = 1;
+    const quality = 0;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
   
-    expect(items[0].name).toBe(name);
-    expect(items[0].sellIn).toBe(sellIn-1);
-    expect(items[0].quality).toBe(quality-1);
-    expect(items[0].quality).toBeLessThanOrEqual(50);
+    expect(items[0].sellIn).toBe(sellIn-1);  
   });
 
-  it("should work with quality > 0", function () {
+  it("should work with quality >= 0 ", function () {
 
     const name = "foo";
     const sellIn = 0;
-    const quality = 1;
+    const quality = 0;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
   
-    expect(items[0].name).toBe(name);
-    expect(items[0].sellIn).toBe(sellIn-1);
-    expect(items[0].quality).toBe(quality-1);
-    expect(items[0].quality).toBeLessThanOrEqual(50);
+    expect(items[0].quality).toBeGreaterThanOrEqual(0);
   });
 
 
+  it("should work with quality <= 50 ", function () {
+
+    const name = "foo";
+    const sellIn = 0;
+    const quality = 50;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+  
+    expect(items[0].quality).toBeLessThanOrEqual(50);
+  });
+  
 
 });
