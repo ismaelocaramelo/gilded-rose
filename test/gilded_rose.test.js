@@ -9,7 +9,7 @@ describe("Gilded Rose", function () {
     const quality = 0;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].name).toBe(name);
   });
@@ -21,7 +21,7 @@ describe("Gilded Rose", function () {
     const quality = 0;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].sellIn).toBe(sellIn - 1);
   });
@@ -33,7 +33,7 @@ describe("Gilded Rose", function () {
     const quality = 1;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality - 1);
   });
@@ -45,7 +45,7 @@ describe("Gilded Rose", function () {
     const quality = 0;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBeGreaterThanOrEqual(0);
   });
@@ -58,7 +58,7 @@ describe("Gilded Rose", function () {
     const quality = 50;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBeLessThanOrEqual(50);
   });
@@ -71,7 +71,7 @@ describe("Gilded Rose", function () {
     const quality = 2;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality - 2);
   });
@@ -84,7 +84,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBeGreaterThan(quality);
   });
@@ -97,7 +97,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].sellIn).toBe(sellIn);
   });
@@ -109,7 +109,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality);
   });
@@ -121,7 +121,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality + 2);
   });
@@ -133,7 +133,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality + 3);
   });
@@ -145,7 +145,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(0);
   });
@@ -157,7 +157,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality-2);
   });
@@ -168,7 +168,7 @@ describe("Gilded Rose", function () {
     const quality = 8;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
-    const items = gildedRose.updateQuality();
+    const items = gildedRose.updateShop();
 
     expect(items[0].quality).toBe(quality-2);
   });

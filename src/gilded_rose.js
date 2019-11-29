@@ -76,11 +76,11 @@ class Shop {
       if (this.items[i].sellIn < 0) {
         this.updateConcertItems(i);
       }
-      
+
     }
   }
 
-  updateQuality() {
+  updateShop(){
     for (let i = 0; i < this.items.length; i++) {
       this.updateSellInItem(i);
       this.updateQualityItem(i);
