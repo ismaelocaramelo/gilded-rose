@@ -14,7 +14,7 @@ describe("Gilded Rose", function () {
     expect(items[0].name).toBe(name);
   });
 
-  it("should decrease the sellIn by one", function () {
+  it("should lowers sellIn values for every item", function () {
 
     const name = "foo";
     const sellIn = 0;
@@ -24,6 +24,18 @@ describe("Gilded Rose", function () {
     const items = gildedRose.updateQuality();
 
     expect(items[0].sellIn).toBe(sellIn - 1);
+  });
+
+  it("should lowers quality values for every item", function () {
+
+    const name = "foo";
+    const sellIn = 1;
+    const quality = 1;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].quality).toBe(quality - 1);
   });
 
   it("should work with quality >= 0 ", function () {
