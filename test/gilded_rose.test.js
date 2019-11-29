@@ -1,7 +1,7 @@
 const { Shop, Item } = require("../src/gilded_rose");
 
 describe("Gilded Rose", function () {
-  
+
   it("should work with base case", function () {
 
     const name = "foo";
@@ -10,7 +10,7 @@ describe("Gilded Rose", function () {
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
-  
+
     expect(items[0].name).toBe(name);
   });
 
@@ -22,8 +22,8 @@ describe("Gilded Rose", function () {
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
-  
-    expect(items[0].sellIn).toBe(sellIn-1);  
+
+    expect(items[0].sellIn).toBe(sellIn - 1);
   });
 
   it("should work with quality >= 0 ", function () {
@@ -34,7 +34,7 @@ describe("Gilded Rose", function () {
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
-  
+
     expect(items[0].quality).toBeGreaterThanOrEqual(0);
   });
 
@@ -47,7 +47,7 @@ describe("Gilded Rose", function () {
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
-  
+
     expect(items[0].quality).toBeLessThanOrEqual(50);
   });
 
@@ -60,8 +60,21 @@ describe("Gilded Rose", function () {
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateQuality();
-  
-    expect(items[0].quality).toBe(quality-2);
+
+    expect(items[0].quality).toBe(quality - 2);
+  });
+
+
+  it("should \"Aged Brie\" actually increases in Quality the older it gets", function () {
+
+    const name = "Aged Brie";
+    const sellIn = 10;
+    const quality = 8;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].quality).toBeGreaterThan(quality);
   });
 
 });
