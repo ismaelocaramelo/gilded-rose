@@ -62,15 +62,21 @@ class Shop {
   }
 
   updateQualityItem(i) {
-
-    if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
-      this.updateQualityGenericItem(i)
+    if (this.items[i].name === 'Conjured') {
+      this.updateQualityGenericItem(i);
+      this.updateQualityGenericItem(i);
     } else {
-      this.updateQualityAgedItem(i)
-    }
-    
-    if (this.items[i].sellIn < 0) {
-      this.updateConcertItems(i);
+
+      if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
+        this.updateQualityGenericItem(i)
+      } else {
+        this.updateQualityAgedItem(i)
+      }
+
+      if (this.items[i].sellIn < 0) {
+        this.updateConcertItems(i);
+      }
+      
     }
   }
 

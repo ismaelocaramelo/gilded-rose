@@ -150,4 +150,28 @@ describe("Gilded Rose", function () {
     expect(items[0].quality).toBe(0);
   });
 
+  it("should \"Conjured\" items degrade in Quality twice as fast as normal items (not concert)", function () {
+
+    const name = "Conjured";
+    const sellIn = 1;
+    const quality = 8;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].quality).toBe(quality-2);
+  });
+  it("should \"Conjured\" items degrade in Quality twice as fast as normal items", function () {
+
+    const name = "Conjured";
+    const sellIn = -1;
+    const quality = 8;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
+
+    expect(items[0].quality).toBe(quality-2);
+  });
+
+
 });
