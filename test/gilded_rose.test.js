@@ -50,6 +50,18 @@ describe("Gilded Rose", function () {
   
     expect(items[0].quality).toBeLessThanOrEqual(50);
   });
+
+
+  it("should degrades twice as fast when the sell by date has passed ", function () {
+
+    const name = "foo";
+    const sellIn = 0;
+    const quality = 2;
+
+    const gildedRose = new Shop([new Item(name, sellIn, quality)]);
+    const items = gildedRose.updateQuality();
   
+    expect(items[0].quality).toBe(quality-2);
+  });
 
 });
