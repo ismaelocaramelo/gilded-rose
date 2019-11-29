@@ -94,7 +94,7 @@ describe("Gilded Rose", function () {
 
     const name = "Sulfuras, Hand of Ragnaros";
     const sellIn = 10;
-    const quality = 8;
+    const quality = 80;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateShop();
@@ -106,7 +106,7 @@ describe("Gilded Rose", function () {
 
     const name = "Sulfuras, Hand of Ragnaros";
     const sellIn = 10;
-    const quality = 8;
+    const quality = 80;
 
     const gildedRose = new Shop([new Item(name, sellIn, quality)]);
     const items = gildedRose.updateShop();
